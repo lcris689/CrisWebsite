@@ -1,17 +1,17 @@
 /* styles.css - simple responsive resume styles */
 :root{
-  --bg:#f7f7fb;
+  --bg:#000000;
   --card:#ffffff;
-  --muted:#6b7280;
+  --muted:#ffffff;
   --accent:#2563eb;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Roboto,-apple-system,'Helvetica Neue',Arial}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Roboto,-apple-system,'Helvetica Neue',Arial,}
 body{background:var(--bg);color:#111827;line-height:1.5}
 .container{max-width:900px;margin:0 auto;padding:24px}
-.site-header{background:linear-gradient(90deg,rgba(37,99,235,0.05),transparent);padding:24px 0}
+.site-header{background:linear-gradient(90deg,rgba(253, 211, 211, 0.05),transparent);padding:24px 0}
 .header-inner{display:flex;gap:16px;align-items:center}
-.avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid rgba(0,0,0,0.06)}
+.avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid rgba(255, 255, 255, 0.06)}
 #name{margin:0;font-size:1.5rem}
 .title{margin:4px 0;color:var(--muted)}
 .contact{margin:6px 0;color:var(--muted)}
