@@ -1,13 +1,13 @@
 :root{
-  --bg:#f7f8fb;
-  --card:#ffffff;
+  --bg:#000000;
+  --card:#000000;
   --muted:#6b7280;
   --accent:#2563eb;
   --radius:12px;
   --max:1024px;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;color:#0f172a;background:var(--bg)}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;color:#ffffff;background:var(--bg)}
 .container{max-width:var(--max);margin:0 auto;padding:28px}
 .hero{background:linear-gradient(90deg,rgba(37,99,235,0.06),transparent);padding:28px 0;margin-bottom:12px}
 .hero h1{margin:0;font-size:1.6rem}

@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import ProjectCard from './components/ProjectCard'
 
 const projects = [
@@ -6,37 +8,37 @@ const projects = [
     id: 1,
     title: 'Project One',
     description: 'A short summary demonstrating tech and impact.',
-    url: '#',
-    repo: '#'
+    url: '',
+    repo: ''
   },
   {
     id: 2,
     title: 'Project Two',
     description: 'Another project emphasizing architecture and results.',
-    url: '#',
-    repo: '#'
+    url: '',
+    repo: ''
   },
   {
     id: 3,
     title: 'Project Three',
     description: 'Tooling, automation, or small library example.',
-    url: '#',
-    repo: '#'
+    url: '',
+    repo: ''
   }
 ]
 
 export default function App() {
   return (
     <div className="app">
-      <header className="hero">
-        <div className="container">
-          <h1>Your Name</h1>
-          <p className="lead">Software Engineer — I build things that scale.</p>
-        </div>
-      </header>
+      <Header />
 
       <main className="container">
-        <section>
+        <section id="summary">
+          <h2>Summary</h2>
+          <p>Concise professional summary. One or two sentences that describe you and what you build.</p>
+        </section>
+
+        <section id="projects">
           <h2>Projects</h2>
           <div className="grid">
             {projects.map(p => (
@@ -45,18 +47,29 @@ export default function App() {
           </div>
         </section>
 
-        <section>
-          <h2>About / Resume</h2>
-          <p>Short summary about you, and links to download resume / contact.</p>
-          <p>
-            <a className="btn" href="/resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-          </p>
+        <section id="experience">
+          <h2>Experience</h2>
+          <article className="job">
+            <h3>Job Title — Company</h3>
+            <p className="meta">Location • Dates</p>
+            <ul>
+              <li>Key achievement or responsibility describing impact.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <p>Computer Science MS — ASU — 2024</p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <p>List of relevant skills, languages, tools and frameworks.</p>
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="container">Built with React + Vite • <a href="https://github.com/lcris689/CrisWebsite">Source</a></div>
-      </footer>
+      <Footer />
     </div>
   )
 }
