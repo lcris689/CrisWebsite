@@ -8,7 +8,7 @@ export default function Header() {
           <img src="/assets/profile.jpg" alt="Profile photo" className="avatar" />
         </div>
         <div className="intro">
-          <h1>Cristobal Lizarraga</h1>
+          <h1>Cris Lizarraga</h1>
           <p className="title">Software Engineer</p>
           <p className="contact">
             Email: <a href="mailto:Lizarraga.cristobal689@gmail.com">Lizarraga.cristobal689@gmail.com</a> • 
