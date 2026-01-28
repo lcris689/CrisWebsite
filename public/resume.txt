@@ -1,0 +1,42 @@
+Cristobal A. Lizarraga
+(480)- 519-3666 Lizarraga.cristobal689@gmail.com
+Education
+M.S. Computer Science, Arizona State University, May 2024
+GPA: 3.89
+B.S. Computer Science, Arizona State University, May 2023
+GPA: 3.96
+Skills
+Software: AWS, MySQL, PostgreSQL, Tableau, VMware, Git/GitHub, Node.js, React, Blender,
+MATLAB, Photoshop, Unity, Salesforce, AutoCAD, Unix/Linux
+Programming Skills: Java, Python, C/C++, JavaScript, SQL, Bash, C#, TensorFlow, Hadoop,
+Spark, D3.js, NoSQL, Scala, HTML, React, Node.js, PHP, PowerShell, Shell Scripting, Arduino,
+Apex, Prolog, Scheme, LISP
+Languages: English (Native), Spanish (Fluent)
+Work Experience
+Drafter-Phoenix Modulars January 2025- Present
+● Design and develop detailed blueprints for modular buildings using AutoCAD
+Architecture, customized to meet client specifications and project goals.
+● Collaborate with cross-functional teams—including sales, structural engineers, and
+production staff—to ensure accurate, buildable designs.
+● Verify all drawings comply with state and local building codes across multiple
+jurisdictions, revising plans as needed to meet regulatory standards.
+● Created custom AutoLISP scripts to automate repetitive drafting tasks and improve
+workflow efficiency.
+Research Assistant (Fellowship) - Arizona State University August 2022-April 2023
+● Built data pipelines and managed large datasets for SEIR models and COVID-19
+research, including data extraction, transformation, and integration.
+● Designed visualizations to analyze prevention strategies and support educational
+materials.
+Projects
+Vast Challenge
+● Visualized daily routines using city-scale datasets to uncover patterns via data
+modeling and visual tools.
+● Tech: JavaScript, D3.js, Apache Spark, Python, SQL
+AR NASA SpaceCraft Museum Model (CS Capstone Project)
+● Working with a team, developed an interactive AR model of NASA’s Psyche spacecraft
+for educational use in museum web apps.
+● Tech: JavaScript, Blender, Google ARCore, AR.js, Three.js, HTML/CSS
+Child Mind Institute- Detecting Sleep States
+● Analyzed pediatric sleep data using models from logistic regression to LSTM networks
+to identify behavior patterns.
+● Tech: Python, Matplotlib, Pandas, NumPy

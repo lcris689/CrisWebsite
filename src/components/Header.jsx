@@ -11,7 +11,7 @@ export default function Header() {
           <h1>Cristobal Lizarraga</h1>
           <p className="title">Software Engineer</p>
           <p className="contact">
-            Email: <a href="mailto:Cristobal.Lizarraga@gmail.com">Cristobal.Lizarraga@gmail.com</a> • 
+            Email: <a href="mailto:Lizarraga.cristobal689@gmail.com">Lizarraga.cristobal689@gmail.com</a> • 
             <a href="/Resume.pdf" target="_blank" rel="noreferrer"> Download PDF</a>
           </p>
         </div>
