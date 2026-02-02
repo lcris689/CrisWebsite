@@ -6,9 +6,9 @@ import ProjectCard from './components/ProjectCard'
 const projects = [
   {
     id: 1,
-    title: 'Vast Challenge',
+    title: 'Vast MC Challenge 2022',
     description: 'Visualized daily routines using city-scale datasets to uncover patterns via data modeling and visual tools. Built with JavaScript, D3.js, Apache Spark, Python, and SQL.',
-    url: '',
+    url: 'https://github.com/lcris689/CSE578-VAST-Project-window-compatable',
     repo: ''
   },
   {
