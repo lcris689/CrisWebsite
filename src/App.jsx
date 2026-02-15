@@ -22,7 +22,7 @@ const projects = [
     id: 3,
     title: 'Child Mind Institute - Detecting Sleep States',
     description: 'Analyzed pediatric sleep data using models from logistic regression to LSTM networks to identify behavior patterns. Built with Python, Matplotlib, Pandas, and NumPy.',
-    url: '',
+    url: 'https://www.kaggle.com/code/cristoballizarraga/detect-sleep-states-baseline-solution/edit',
     repo: ''
   }
 ]
