@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ProjectCard from './components/ProjectCard'
+import SEIRChart from './components/SEIRChart'
 import useScrollAnimation from './hooks/useScrollAnimation'
 
 const projects = [
@@ -77,6 +78,11 @@ export default function App() {
               <li>Designed visualizations to analyze prevention strategies and support educational materials.</li>
             </ul>
           </article>
+          <div className="seir-container">
+            <h3 className="seir-title">SEIR Epidemiological Model</h3>
+            <p className="seir-subtitle">Interactive visualization from ASU research fellowship</p>
+            <SEIRChart />
+          </div>
         </section>
 
         <section id="education" ref={educationRef} className="scroll-animate">
