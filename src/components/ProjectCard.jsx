@@ -1,8 +1,11 @@
 import React from 'react'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 
 export default function ProjectCard({ project }) {
+  const cardRef = useScrollAnimation({ threshold: 0.2 })
+  
   return (
-    <article className="card">
+    <article className="card scroll-animate" ref={cardRef}>
       <div className="card-body">
         <h3>{project.title}</h3>
         <p className="muted">{project.description}</p>

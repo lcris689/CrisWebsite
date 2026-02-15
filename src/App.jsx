@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ProjectCard from './components/ProjectCard'
+import useScrollAnimation from './hooks/useScrollAnimation'
 
 const projects = [
   {
@@ -31,17 +32,23 @@ const projects = [
 ]
 
 export default function App() {
+  const summaryRef = useScrollAnimation({ threshold: 0.2 })
+  const projectsRef = useScrollAnimation({ threshold: 0.1 })
+  const experienceRef = useScrollAnimation({ threshold: 0.1 })
+  const educationRef = useScrollAnimation({ threshold: 0.2 })
+  const skillsRef = useScrollAnimation({ threshold: 0.2 })
+  
   return (
     <div className="app">
       <Header />
 
       <main className="container">
-        <section id="summary">
+        <section id="summary" ref={summaryRef} className="scroll-animate">
           <h2>Summary</h2>
           <p>Software Engineer with a Master's degree in Computer Science and experience in full-stack development, data engineering, and AR/VR applications. Proficient in JavaScript, Python, Java, C/C++, and cloud technologies including AWS. Bilingual in English and Spanish with a strong foundation in data visualization, machine learning, and automated workflow solutions.</p>
         </section>
 
-        <section id="projects">
+        <section id="projects" ref={projectsRef} className="scroll-animate">
           <h2>Projects</h2>
           <div className="grid">
             {projects.map(p => (
@@ -50,7 +57,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="experience">
+        <section id="experience" ref={experienceRef} className="scroll-animate">
           <h2>Experience</h2>
           <article className="job">
             <h3>Drafter — Phoenix Modulars</h3>
@@ -72,13 +79,13 @@ export default function App() {
           </article>
         </section>
 
-        <section id="education">
+        <section id="education" ref={educationRef} className="scroll-animate">
           <h2>Education</h2>
           <p><strong>M.S. Computer Science</strong> — Arizona State University — May 2024 • GPA: 3.89</p>
           <p><strong>B.S. Computer Science</strong> — Arizona State University — May 2023 • GPA: 3.96</p>
         </section>
 
-        <section id="skills">
+        <section id="skills" ref={skillsRef} className="scroll-animate">
           <h2>Skills</h2>
           <p><strong>Programming:</strong> Java, Python, C/C++, JavaScript, SQL, Bash, C#, HTML, CSS, PHP, PowerShell, Shell Scripting, Apex, Prolog, Scheme, LISP, Arduino</p>
           <p><strong>Frameworks & Libraries:</strong> React, Node.js, TensorFlow, D3.js, Three.js, AR.js, Pandas, NumPy, Matplotlib, Hadoop, Spark</p>
