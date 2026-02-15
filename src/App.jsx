@@ -9,21 +9,24 @@ const projects = [
     title: 'Vast MC Challenge 2022',
     description: 'Visualized daily routines using city-scale datasets to uncover patterns via data modeling and visual tools. Built with JavaScript, D3.js, Apache Spark, Python, and SQL.',
     url: 'https://github.com/lcris689/CSE578-VAST-Project-window-compatable',
-    repo: ''
+    repo: '',
+    image: '/assets/project1.jpg'
   },
   {
     id: 2,
     title: 'AR NASA Spacecraft Museum Model',
     description: 'CS Capstone Project: Developed an interactive AR model of NASA\'s Psyche spacecraft for educational use in museum web apps. Built with JavaScript, Blender, Google ARCore, AR.js, Three.js, and HTML/CSS.',
     url: '',
-    repo: ''
+    repo: '',
+    image: '/assets/project2.jpg'
   },
   {
     id: 3,
     title: 'Child Mind Institute - Detecting Sleep States',
     description: 'Analyzed pediatric sleep data using models from logistic regression to LSTM networks to identify behavior patterns. Built with Python, Matplotlib, Pandas, and NumPy.',
     url: 'https://www.kaggle.com/code/cristoballizarraga/detect-sleep-states-baseline-solution/edit',
-    repo: ''
+    repo: '',
+    image: '/assets/project3.jpg'
   }
 ]
 
