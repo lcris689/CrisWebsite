@@ -1,20 +1,34 @@
 import React from 'react'
+import ProjectVisual from './ProjectVisual'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
-export default function ProjectCard({ project }) {
-  const cardRef = useScrollAnimation({ threshold: 0.2 })
-  
+export default function ProjectCard({ project, index = 0 }) {
+  const cardRef = useScrollAnimation({ threshold: 0.12 })
+
   return (
-    <article className="card scroll-animate" ref={cardRef}>
-      <div className="card-body">
+    <article
+      className="project-card reveal"
+      ref={cardRef}
+      style={{ '--reveal-delay': `${index * 80}ms` }}
+    >
+      <ProjectVisual type={project.visual} />
+      <div className="project-body">
+        <p className="eyebrow">{project.eyebrow}</p>
         <h3>{project.title}</h3>
-        <p className="muted">{project.description}</p>
-        <div className="card-actions">
-          {project.url && <a className="btn" href={project.url} target="_blank" rel="noreferrer">Link</a>}
-          {project.repo && <a className="btn ghost" href={project.repo} target="_blank" rel="noreferrer">Code</a>}
-        </div>
+        <p className="project-description">{project.description}</p>
+        <ul className="technology-list" aria-label="Technologies">
+          {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+        </ul>
+        {project.links.length > 0 && (
+          <div className="project-actions">
+            {project.links.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                {link.label}<span aria-hidden="true"> ↗</span>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
-      <img src={project.image} alt={project.title} className="card-image" />
     </article>
   )
 }

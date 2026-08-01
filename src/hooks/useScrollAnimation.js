@@ -1,36 +1,34 @@
 import { useEffect, useRef } from 'react'
 
-export default function useScrollAnimation(options = {}) {
+export default function useScrollAnimation({ threshold = 0.1, rootMargin = '0px 0px -12% 0px', once = true } = {}) {
   const elementRef = useRef(null)
-  
+
   useEffect(() => {
     const element = elementRef.current
-    if (!element) return
-    
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.classList.add('animate-in')
-          // Optionally unobserve after animation
-          if (options.once !== false) {
-            observer.unobserve(element)
-          }
-        } else if (options.once === false) {
-          element.classList.remove('animate-in')
-        }
-      },
-      {
-        threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px'
-      }
-    )
-    
-    observer.observe(element)
-    
-    return () => {
-      if (element) observer.unobserve(element)
+    if (!element) return undefined
+
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    const Observer = window.IntersectionObserver
+
+    if (reducedMotion || typeof Observer !== 'function') {
+      element.classList.add('reveal-in')
+      return undefined
     }
-  }, [options.threshold, options.rootMargin, options.once])
-  
+
+    element.classList.add('reveal-ready')
+    const observer = new Observer(([entry]) => {
+      if (entry.isIntersecting) {
+        element.classList.add('reveal-in')
+        if (once) observer.unobserve(element)
+      } else if (!once) {
+        element.classList.remove('reveal-in')
+      }
+    }, { threshold, rootMargin })
+
+    observer.observe(element)
+
+    return () => observer.disconnect()
+  }, [threshold, rootMargin, once])
+
   return elementRef
 }
