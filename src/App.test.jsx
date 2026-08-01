@@ -29,4 +29,16 @@ describe('portfolio application', () => {
     expect(screen.getByRole('main')).toBeInTheDocument()
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
   })
+
+  it('shows the current ServiceNow internship before earlier experience', () => {
+    render(<App />)
+
+    const internship = screen.getByRole('heading', { level: 3, name: 'ServiceNow Intern' })
+    const drafting = screen.getByRole('heading', { level: 3, name: 'Drafter' })
+
+    expect(internship).toBeInTheDocument()
+    expect(internship.compareDocumentPosition(drafting) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(screen.getByText('Keenstack')).toBeInTheDocument()
+    expect(screen.getByText(/ServiceNow Certified System Administrator/i)).toBeInTheDocument()
+  })
 })

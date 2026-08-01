@@ -18,7 +18,7 @@ export default function App() {
               <p className="eyebrow">Profile</p>
               <h2 id="about-heading">Engineering breadth, grounded in clear outcomes.</h2>
             </div>
-            <p className="about-copy">Software Engineer with a Master's degree in Computer Science and experience across full-stack development, data engineering, machine learning, and AR/VR. Bilingual in English and Spanish, with a focus on making technical systems useful to the people they serve.</p>
+            <p className="about-copy">Software Engineer with a Master's degree in Computer Science and experience across enterprise workflows, full-stack development, data engineering, machine learning, and AR/VR. Bilingual in English and Spanish, with a focus on making technical systems useful to the people they serve.</p>
             <dl className="profile-facts">
               <div><dt>Based in</dt><dd>Arizona</dd></div>
               <div><dt>Education</dt><dd>M.S. Computer Science</dd></div>
@@ -38,7 +38,7 @@ export default function App() {
 
         <section id="experience" className="page-section section-soft" aria-labelledby="experience-heading">
           <div className="container">
-            <SectionHeading id="experience-heading" eyebrow="Experience" title="Building across disciplines." description="From production-ready building plans to research-grade data pipelines." />
+            <SectionHeading id="experience-heading" eyebrow="Experience" title="Building across disciplines." description="From enterprise service workflows and production-ready building plans to research-grade data pipelines." />
             <div className="timeline">
               {experience.map((job) => (
                 <article className="timeline-item" key={`${job.role}-${job.company}`}>

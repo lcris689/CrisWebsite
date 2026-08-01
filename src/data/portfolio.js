@@ -30,6 +30,16 @@ export const projects = [
 
 export const experience = [
   {
+    role: 'ServiceNow Intern',
+    company: 'Keenstack',
+    period: 'May 2026 — Present',
+    points: [
+      'Configure and administer the ServiceNow platform at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
+      'Apply ServiceNow AI tools to improve service delivery and streamline enterprise workflows.',
+      'Build platform expertise while pursuing the ServiceNow Certified System Administrator (CSA) certification.'
+    ]
+  },
+  {
     role: 'Drafter',
     company: 'Phoenix Modulars',
     period: 'January 2025 — Present',
@@ -57,8 +67,8 @@ export const education = [
 ]
 
 export const skillGroups = [
-  { title: 'Programming', skills: ['JavaScript', 'Python', 'Java', 'C / C++', 'SQL', 'Bash', 'C#', 'HTML / CSS'] },
+  { title: 'Programming', skills: ['JavaScript', 'Python', 'Java', 'C / C++', 'SQL', 'Bash', 'PowerShell', 'C#', 'HTML / CSS'] },
   { title: 'Data & AI', skills: ['TensorFlow', 'D3.js', 'Pandas', 'NumPy', 'Matplotlib', 'Spark', 'Hadoop', 'Tableau'] },
   { title: 'Web & Immersive', skills: ['React', 'Node.js', 'Three.js', 'AR.js', 'Unity', 'Blender', 'Google ARCore'] },
-  { title: 'Cloud & Tools', skills: ['AWS', 'Git / GitHub', 'PostgreSQL', 'MySQL', 'AutoCAD', 'Linux', 'Salesforce'] }
+  { title: 'Cloud & Tools', skills: ['ServiceNow', 'AWS', 'Git / GitHub', 'PostgreSQL', 'MySQL', 'AutoCAD', 'Linux', 'Salesforce'] }
 ]
