@@ -15,8 +15,16 @@ describe('Header', () => {
     await user.click(toggle)
     expect(toggle).toHaveAttribute('aria-expanded', 'true')
 
+    const projectsLink = screen.getByRole('link', { name: 'Projects' })
+    projectsLink.focus()
     await user.keyboard('{Escape}')
     expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    expect(toggle).toHaveFocus()
+
+    await user.click(toggle)
+    await user.click(projectsLink)
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    expect(toggle).toHaveFocus()
   })
 
   it('provides portfolio navigation and primary calls to action', () => {

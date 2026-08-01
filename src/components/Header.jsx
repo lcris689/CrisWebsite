@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import HeroMesh from './HeroMesh'
 import useActiveSection from '../hooks/useActiveSection'
 import useScrollProgress from '../hooks/useScrollProgress'
@@ -7,16 +7,25 @@ const navigation = ['projects', 'experience', 'education', 'skills']
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuToggleRef = useRef(null)
   const activeSection = useActiveSection(navigation)
   const scrollProgress = useScrollProgress()
 
   useEffect(() => {
     const closeOnEscape = (event) => {
-      if (event.key === 'Escape') setMenuOpen(false)
+      if (event.key === 'Escape' && menuOpen) {
+        setMenuOpen(false)
+        menuToggleRef.current?.focus()
+      }
     }
     window.addEventListener('keydown', closeOnEscape)
     return () => window.removeEventListener('keydown', closeOnEscape)
-  }, [])
+  }, [menuOpen])
+
+  const closeMenuAndRestoreFocus = () => {
+    setMenuOpen(false)
+    menuToggleRef.current?.focus()
+  }
 
   return (
     <header className="site-header">
@@ -27,6 +36,7 @@ export default function Header() {
           <span>Cristobal Lizarraga</span>
         </a>
         <button
+          ref={menuToggleRef}
           className="menu-toggle"
           type="button"
           aria-expanded={menuOpen}
@@ -42,7 +52,7 @@ export default function Header() {
               key={item}
               href={`#${item}`}
               aria-current={activeSection === item ? 'location' : undefined}
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenuAndRestoreFocus}
             >
               {item[0].toUpperCase() + item.slice(1)}
             </a>
