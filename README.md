@@ -1,13 +1,21 @@
-# CrisWebsite (React + Vite)
+# CrisWebsite
 
-Resume + Projects site built with React and Vite.
+A responsive portfolio for Cristobal Lizarraga, built with React, Vite, and D3.
 
-To run locally:
-1. npm install
-2. npm run dev
-3. Open http://localhost:5173
+## Local development
 
-Build:
-- npm run build
+```bash
+npm install
+npm run dev
+```
 
-This project will be deployed to GitHub Pages through the provided workflow.
+Open `http://localhost:5173`.
+
+## Quality checks
+
+```bash
+npm test
+npm run build
+```
+
+The site is prepared for GitHub Pages deployment through the repository workflow.
