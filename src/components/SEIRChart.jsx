@@ -9,7 +9,7 @@ const controls = [
 
 const series = [
   { key: 'S', label: 'Susceptible', color: '#007cf0', dash: null },
-  { key: 'E', label: 'Exposed', color: '#7928ca', dash: '7 4' },
+  { key: 'E', label: 'Exposed', color: '#9b6bff', dash: '7 4' },
   { key: 'I', label: 'Infected', color: '#ff4d4d', dash: '3 3' },
   { key: 'R', label: 'Recovered', color: '#00a99d', dash: '10 3 2 3' }
 ]

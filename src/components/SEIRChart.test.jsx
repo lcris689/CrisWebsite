@@ -34,5 +34,6 @@ describe('SEIRChart', () => {
     const svg = container.querySelector('svg')
     expect(svg).toHaveAttribute('viewBox', '0 0 600 240')
     expect(svg).toHaveAttribute('aria-label', 'SEIR population over time')
+    expect(container.querySelector('[data-series="Exposed"]')).toHaveAttribute('stroke', '#9b6bff')
   })
 })
