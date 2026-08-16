@@ -42,11 +42,11 @@ export const experience = [
   {
     role: 'ServiceNow Intern',
     company: 'Keenstack',
-    period: 'May 2026 — Present',
+    period: 'May 2026 — August 2026',
     points: [
-      'Configure and administer the ServiceNow platform at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
-      'Apply ServiceNow AI tools to improve service delivery and streamline enterprise workflows.',
-      'Earned the ServiceNow Certified System Administrator (CSA) credential while building practical platform expertise.'
+      'Completed hands-on ServiceNow platform configuration and administration at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
+      'Developed practical experience using ServiceNow AI tools to support service delivery and enterprise workflows.',
+      'Earned the ServiceNow Certified System Administrator (CSA) credential after completing the internship, continuing the platform learning started at Keenstack.'
     ]
   },
   {
