@@ -168,6 +168,7 @@ p { color: var(--color-body); line-height: 1.65; }
 .project-visual { min-height: 250px; display: grid; place-items: center; overflow: hidden; background: #0d0d11; border-bottom: 1px solid var(--color-hairline); }
 .project-card:first-child .project-visual { min-height: 100%; border-right: 1px solid var(--color-hairline); border-bottom: 0; }
 .project-visual svg { width: 100%; min-width: 440px; }
+.project-screenshot { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .project-visual text { fill: var(--color-muted); font: 500 11px 'Geist Mono', monospace; letter-spacing: 0.06em; }
 .visual-grid path, .orbit { fill: none; stroke: #292933; stroke-width: 1; }
 .visual-line { fill: none; stroke-width: 3; stroke-linecap: round; }
@@ -217,6 +218,7 @@ p { color: var(--color-body); line-height: 1.65; }
 
 .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .education-card { padding: 30px; background: var(--color-surface); border: 1px solid var(--color-hairline); border-radius: var(--radius-md); }
+.credential-card { grid-column: 1 / -1; background: linear-gradient(110deg, rgb(87 122 255 / 10%), rgb(255 71 153 / 7%) 58%, transparent), var(--color-surface); border-color: #3d4056; }
 .education-card h3 { margin-bottom: 8px; }
 .education-card p:not(.eyebrow) { margin: 0; }
 .education-card span { display: inline-block; margin-top: 24px; color: var(--color-muted); font: 500 0.75rem/1 'Geist Mono', monospace; }
@@ -263,6 +265,7 @@ p { color: var(--color-body); line-height: 1.65; }
   .section-description { max-width: 620px; margin-top: 18px; }
   .project-card:first-child { display: block; }
   .project-card:first-child .project-visual { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--color-hairline); }
+  .project-card:first-child .visual-screenshot { min-height: 0; aspect-ratio: 16 / 9; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .skill-group:nth-child(3) { border-left: 0; border-top: 1px solid var(--color-hairline); }
   .skill-group:nth-child(4) { border-top: 1px solid var(--color-hairline); }

@@ -22,14 +22,14 @@ export default function App() {
             <dl className="profile-facts">
               <div><dt>Based in</dt><dd>Arizona</dd></div>
               <div><dt>Education</dt><dd>M.S. Computer Science</dd></div>
-              <div><dt>Languages</dt><dd>English · Spanish</dd></div>
+              <div><dt>Credential</dt><dd>ServiceNow CSA</dd></div>
             </dl>
           </div>
         </section>
 
         <section id="projects" className="page-section" aria-labelledby="projects-heading">
           <div className="container">
-            <SectionHeading id="projects-heading" eyebrow="Selected work" title="Projects built for real questions." description="Data-rich systems, immersive learning, and applied machine learning." />
+            <SectionHeading id="projects-heading" eyebrow="Selected work" title="Projects built for real questions." description="Enterprise workflows, data-rich systems, immersive learning, and applied machine learning." />
             <div className="project-grid">
               {projects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}
             </div>
@@ -64,14 +64,14 @@ export default function App() {
 
         <section id="education" className="page-section" aria-labelledby="education-heading">
           <div className="container">
-            <SectionHeading id="education-heading" eyebrow="Education" title="A foundation in computer science." />
+            <SectionHeading id="education-heading" eyebrow="Education & credentials" title="A foundation in computer science and enterprise platforms." />
             <div className="education-grid">
               {education.map((item) => (
-                <article className="education-card" key={item.degree}>
+                <article className={`education-card${item.type === 'credential' ? ' credential-card' : ''}`} key={item.degree}>
                   <p className="eyebrow">{item.date}</p>
                   <h3>{item.degree}</h3>
                   <p>{item.school}</p>
-                  <span>GPA {item.gpa}</span>
+                  {item.gpa && <span>GPA {item.gpa}</span>}
                 </article>
               ))}
             </div>

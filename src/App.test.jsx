@@ -39,6 +39,24 @@ describe('portfolio application', () => {
     expect(internship).toBeInTheDocument()
     expect(internship.compareDocumentPosition(drafting) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(screen.getByText('Keenstack')).toBeInTheDocument()
-    expect(screen.getByText(/ServiceNow Certified System Administrator/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/ServiceNow Certified System Administrator/i)).toHaveLength(2)
+  })
+
+  it('features the offline CMDB Identity Guard continuation and completed ServiceNow CSA credential', () => {
+    render(<App />)
+
+    const cmdbProject = screen.getByRole('heading', { level: 3, name: 'CMDB Identity Guard Offline Demo' })
+    const vastProject = screen.getByRole('heading', { level: 3, name: 'VAST MC Challenge 2022' })
+
+    expect(cmdbProject.compareDocumentPosition(vastProject) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(screen.getByRole('link', { name: /view source/i })).toHaveAttribute(
+      'href',
+      'https://github.com/lcris689/cmdb-identity-guard-demo'
+    )
+    expect(screen.getByRole('img', { name: /cmdb identity guard offline demo overview/i })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 3, name: 'CMDB Duplicate Analysis Workbench' })).not.toBeInTheDocument()
+    const credential = screen.getByRole('heading', { level: 3, name: 'ServiceNow Certified System Administrator (CSA)' })
+    expect(credential.closest('article')).toHaveClass('credential-card')
+    expect(screen.queryByText(/pursuing the ServiceNow Certified System Administrator/i)).not.toBeInTheDocument()
   })
 })

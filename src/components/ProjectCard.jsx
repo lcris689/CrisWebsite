@@ -11,7 +11,20 @@ export default function ProjectCard({ project, index = 0 }) {
       ref={cardRef}
       style={{ '--reveal-delay': `${index * 80}ms` }}
     >
-      <ProjectVisual type={project.visual} />
+      {project.image ? (
+        <div className="project-visual visual-screenshot">
+          <img
+            className="project-screenshot"
+            src={project.image}
+            alt={project.imageAlt}
+            width="1200"
+            height="675"
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        <ProjectVisual type={project.visual} />
+      )}
       <div className="project-body">
         <p className="eyebrow">{project.eyebrow}</p>
         <h3>{project.title}</h3>

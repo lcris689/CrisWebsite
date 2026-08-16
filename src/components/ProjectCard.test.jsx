@@ -33,4 +33,21 @@ describe('ProjectCard', () => {
     const { container } = render(<ProjectCard project={{ ...project, links: [] }} index={1} />)
     expect(container.querySelector('.project-actions')).not.toBeInTheDocument()
   })
+
+  it('uses an authentic project screenshot when one is provided', () => {
+    render(
+      <ProjectCard
+        project={{
+          ...project,
+          image: '/projects/cmdb-identity-guard-offline.webp',
+          imageAlt: 'CMDB Identity Guard offline demo overview',
+        }}
+      />,
+    )
+
+    expect(screen.getByRole('img', { name: 'CMDB Identity Guard offline demo overview' })).toHaveAttribute(
+      'src',
+      '/projects/cmdb-identity-guard-offline.webp',
+    )
+  })
 })

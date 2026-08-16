@@ -17,4 +17,8 @@ describe('portfolio theme', () => {
   it('removes card movement when reduced motion is requested', () => {
     expect(stylesheet).toContain('.project-card:hover, .project-card:focus-within { transform: none; }')
   })
+
+  it('shows the full project screenshot instead of cropping it on narrow cards', () => {
+    expect(stylesheet).toContain('.project-card:first-child .visual-screenshot { min-height: 0; aspect-ratio: 16 / 9; }')
+  })
 })

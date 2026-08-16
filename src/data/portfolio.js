@@ -1,5 +1,15 @@
 export const projects = [
   {
+    slug: 'cmdb-identity-guard-offline',
+    eyebrow: 'ServiceNow · Competition project',
+    title: 'CMDB Identity Guard Offline Demo',
+    description: 'Adapted a hackathon-built ServiceNow UI into a no-credentials offline demo with synthetic CMDB records, explainable duplicate evidence, and simulated steward decisions.',
+    technologies: ['ServiceNow', 'Next.js', 'React', 'TypeScript', 'Vinext'],
+    links: [{ label: 'View source', href: 'https://github.com/lcris689/cmdb-identity-guard-demo' }],
+    image: '/projects/cmdb-identity-guard-offline.webp',
+    imageAlt: 'CMDB Identity Guard offline demo overview with identity-health metrics and duplicate review queue'
+  },
+  {
     slug: 'vast-mc',
     eyebrow: 'Data visualization',
     title: 'VAST MC Challenge 2022',
@@ -36,7 +46,7 @@ export const experience = [
     points: [
       'Configure and administer the ServiceNow platform at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
       'Apply ServiceNow AI tools to improve service delivery and streamline enterprise workflows.',
-      'Build platform expertise while pursuing the ServiceNow Certified System Administrator (CSA) certification.'
+      'Earned the ServiceNow Certified System Administrator (CSA) credential while building practical platform expertise.'
     ]
   },
   {
@@ -63,7 +73,8 @@ export const experience = [
 
 export const education = [
   { degree: 'M.S. Computer Science', school: 'Arizona State University', date: 'May 2024', gpa: '3.89' },
-  { degree: 'B.S. Computer Science', school: 'Arizona State University', date: 'May 2023', gpa: '3.96' }
+  { degree: 'B.S. Computer Science', school: 'Arizona State University', date: 'May 2023', gpa: '3.96' },
+  { degree: 'ServiceNow Certified System Administrator (CSA)', school: 'ServiceNow', date: 'Professional credential', type: 'credential' }
 ]
 
 export const skillGroups = [
