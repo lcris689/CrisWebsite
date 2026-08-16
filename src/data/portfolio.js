@@ -46,7 +46,7 @@ export const experience = [
     points: [
       'Completed hands-on ServiceNow platform configuration and administration at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
       'Developed practical experience using ServiceNow AI tools to support service delivery and enterprise workflows.',
-      'Earned the ServiceNow Certified System Administrator (CSA) credential after completing the internship, continuing the platform learning started at Keenstack.'
+      'Earned the ServiceNow Certified System Administrator (CSA) credential during the final week of the internship, building on the platform experience gained at Keenstack.'
     ]
   },
   {

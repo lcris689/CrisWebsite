@@ -41,7 +41,7 @@ describe('portfolio application', () => {
     expect(screen.getByText('Keenstack')).toBeInTheDocument()
     expect(screen.getByText('May 2026 — August 2026')).toBeInTheDocument()
     expect(screen.queryByText('May 2026 — Present')).not.toBeInTheDocument()
-    expect(screen.getByText(/earned the ServiceNow Certified System Administrator.*after completing the internship/i)).toBeInTheDocument()
+    expect(screen.getByText(/earned the ServiceNow Certified System Administrator.*during the final week of the internship/i)).toBeInTheDocument()
     expect(screen.getAllByText(/ServiceNow Certified System Administrator/i)).toHaveLength(2)
   })
 
