@@ -14,11 +14,18 @@ describe('portfolio theme', () => {
     expect(documentMarkup).toContain('<meta name="theme-color" content="#09090b" />')
   })
 
-  it('removes card movement when reduced motion is requested', () => {
-    expect(stylesheet).toContain('.project-card:hover, .project-card:focus-within { transform: none; }')
+  it('does not use neon showcase accents or decorative project movement', () => {
+    expect(stylesheet).not.toContain('--accent-lime')
+    expect(stylesheet).not.toContain('.project-card:hover')
   })
 
-  it('shows the full project screenshot instead of cropping it on narrow cards', () => {
-    expect(stylesheet).toContain('.project-card:first-child .visual-screenshot { min-height: 0; aspect-ratio: 16 / 9; }')
+  it('keeps the project list single-column and text-first', () => {
+    expect(stylesheet).toContain('.project-grid { display: grid; grid-template-columns: 1fr;')
+    expect(stylesheet).not.toContain('.project-screenshot')
+  })
+
+  it('animates the mathematical header while respecting reduced motion', () => {
+    expect(stylesheet).toContain('@keyframes math-drift')
+    expect(stylesheet).toContain('.math-backdrop * { animation: none !important; }')
   })
 })

@@ -1,32 +1,12 @@
 import React from 'react'
-import ProjectVisual from './ProjectVisual'
-import useScrollAnimation from '../hooks/useScrollAnimation'
-
-export default function ProjectCard({ project, index = 0 }) {
-  const cardRef = useScrollAnimation({ threshold: 0.12 })
-
+export default function ProjectCard({ project }) {
   return (
-    <article
-      className="project-card reveal"
-      ref={cardRef}
-      style={{ '--reveal-delay': `${index * 80}ms` }}
-    >
-      {project.image ? (
-        <div className="project-visual visual-screenshot">
-          <img
-            className="project-screenshot"
-            src={project.image}
-            alt={project.imageAlt}
-            width="1200"
-            height="675"
-            loading="lazy"
-          />
-        </div>
-      ) : (
-        <ProjectVisual type={project.visual} />
-      )}
+    <article className="project-item">
       <div className="project-body">
-        <p className="eyebrow">{project.eyebrow}</p>
+        <div className="project-meta">
+          <p className="eyebrow">{project.eyebrow}</p>
+          {project.status && <span className="project-status">{project.status}</span>}
+        </div>
         <h3>{project.title}</h3>
         <p className="project-description">{project.description}</p>
         <ul className="technology-list" aria-label="Technologies">

@@ -3,11 +3,20 @@ export const projects = [
     slug: 'cmdb-identity-guard-offline',
     eyebrow: 'ServiceNow · Competition project',
     title: 'CMDB Identity Guard Offline Demo',
-    description: 'Adapted a hackathon-built ServiceNow UI into a no-credentials offline demo with synthetic CMDB records, explainable duplicate evidence, and simulated steward decisions.',
+    description: 'Offline CMDB duplicate-analysis demo using synthetic records, explainable evidence, and human-reviewed decisions.',
     technologies: ['ServiceNow', 'Next.js', 'React', 'TypeScript', 'Vinext'],
     links: [{ label: 'View source', href: 'https://github.com/lcris689/cmdb-identity-guard-demo' }],
     image: '/projects/cmdb-identity-guard-offline.webp',
     imageAlt: 'CMDB Identity Guard offline demo overview with identity-health metrics and duplicate review queue'
+  },
+  {
+    slug: 'homelab-learning-lab',
+    eyebrow: 'Infrastructure',
+    title: 'Homelab Learning Lab',
+    status: 'In progress',
+    description: 'Documenting a Proxmox and Docker homelab through verified checkpoints, diagrams, and security notes.',
+    technologies: ['Proxmox', 'Debian', 'Docker', 'Nginx'],
+    links: []
   },
   {
     slug: 'vast-mc',
@@ -42,7 +51,7 @@ export const experience = [
   {
     role: 'ServiceNow Intern',
     company: 'Keenstack',
-    period: 'May 2026 — August 2026',
+    period: 'May 2026 — July 2026',
     points: [
       'Completed hands-on ServiceNow platform configuration and administration at a consulting firm focused on AI-driven customer service, employee workflows, and IT operations.',
       'Developed practical experience using ServiceNow AI tools to support service delivery and enterprise workflows.',

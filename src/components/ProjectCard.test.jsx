@@ -26,7 +26,7 @@ describe('ProjectCard', () => {
       rel: 'noreferrer'
     })
     expect(container.querySelector('img')).not.toBeInTheDocument()
-    expect(container.querySelector('[data-project-visual]')).toHaveAttribute('aria-hidden', 'true')
+    expect(container.querySelector('[data-project-visual]')).not.toBeInTheDocument()
   })
 
   it('does not render an empty action area when a project has no links', () => {
@@ -34,7 +34,7 @@ describe('ProjectCard', () => {
     expect(container.querySelector('.project-actions')).not.toBeInTheDocument()
   })
 
-  it('uses an authentic project screenshot when one is provided', () => {
+  it('keeps the project list text-first when image metadata is provided', () => {
     render(
       <ProjectCard
         project={{
@@ -45,9 +45,6 @@ describe('ProjectCard', () => {
       />,
     )
 
-    expect(screen.getByRole('img', { name: 'CMDB Identity Guard offline demo overview' })).toHaveAttribute(
-      'src',
-      '/projects/cmdb-identity-guard-offline.webp',
-    )
+    expect(screen.queryByRole('img')).not.toBeInTheDocument()
   })
 })

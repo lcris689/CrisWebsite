@@ -1,15 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
-import HeroMesh from './HeroMesh'
+import MathBackdrop from './MathBackdrop'
 import useActiveSection from '../hooks/useActiveSection'
-import useScrollProgress from '../hooks/useScrollProgress'
 
-const navigation = ['projects', 'experience', 'education', 'skills']
+const navigation = ['projects', 'experience']
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuToggleRef = useRef(null)
   const activeSection = useActiveSection(navigation)
-  const scrollProgress = useScrollProgress()
 
   useEffect(() => {
     const closeOnEscape = (event) => {
@@ -29,10 +27,8 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <div className="scroll-progress" aria-hidden="true" style={{ transform: `scaleX(${scrollProgress})` }} />
       <nav className="nav-shell container" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Cristobal Lizarraga, home">
-          <span className="wordmark-mark">CL</span>
           <span>Cristobal Lizarraga</span>
         </a>
         <button
@@ -62,15 +58,9 @@ export default function Header() {
       </nav>
 
       <section id="top" className="hero" aria-labelledby="hero-title">
-        <HeroMesh progress={scrollProgress} />
+        <MathBackdrop />
         <div className="container hero-content">
-          <p className="eyebrow">Software engineer · Data builder · Creative technologist</p>
-          <h1 id="hero-title">Cristobal Lizarraga builds thoughtful software for complex ideas.</h1>
-          <p className="hero-lead">I turn data, engineering systems, and immersive technology into useful, understandable experiences.</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="mailto:Lizarraga.cristobal689@gmail.com">Email me</a>
-            <a className="button button-secondary" href="/Resume.pdf" target="_blank" rel="noreferrer">View resume</a>
-          </div>
+          <h1 id="hero-title">Cristobal Lizarraga</h1>
         </div>
       </section>
     </header>

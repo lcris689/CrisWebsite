@@ -12,24 +12,9 @@ export default function App() {
       <Header />
 
       <main>
-        <section className="about-band" aria-labelledby="about-heading">
-          <div className="container about-grid">
-            <div>
-              <p className="eyebrow">Profile</p>
-              <h2 id="about-heading">Engineering breadth, grounded in clear outcomes.</h2>
-            </div>
-            <p className="about-copy">Software Engineer with a Master's degree in Computer Science and experience across enterprise workflows, full-stack development, data engineering, machine learning, and AR/VR. Bilingual in English and Spanish, with a focus on making technical systems useful to the people they serve.</p>
-            <dl className="profile-facts">
-              <div><dt>Based in</dt><dd>Arizona</dd></div>
-              <div><dt>Education</dt><dd>M.S. Computer Science</dd></div>
-              <div><dt>Credential</dt><dd>ServiceNow CSA</dd></div>
-            </dl>
-          </div>
-        </section>
-
         <section id="projects" className="page-section" aria-labelledby="projects-heading">
           <div className="container">
-            <SectionHeading id="projects-heading" eyebrow="Selected work" title="Projects built for real questions." description="Enterprise workflows, data-rich systems, immersive learning, and applied machine learning." />
+            <SectionHeading id="projects-heading" title="Projects" description="Selected projects and ongoing work." />
             <div className="project-grid">
               {projects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}
             </div>
@@ -38,7 +23,7 @@ export default function App() {
 
         <section id="experience" className="page-section section-soft" aria-labelledby="experience-heading">
           <div className="container">
-            <SectionHeading id="experience-heading" eyebrow="Experience" title="Building across disciplines." description="From enterprise service workflows and production-ready building plans to research-grade data pipelines." />
+            <SectionHeading id="experience-heading" title="Experience" />
             <div className="timeline">
               {experience.map((job) => (
                 <article className="timeline-item" key={`${job.role}-${job.company}`}>
@@ -53,9 +38,8 @@ export default function App() {
             </div>
             <div className="research-panel">
               <div className="research-intro">
-                <p className="eyebrow">Interactive research artifact</p>
-                <h3>Explore an SEIR epidemiological model.</h3>
-                <p>Adjust transmission, incubation, and recovery rates to see how a simulated outbreak changes over time.</p>
+                <h3>SEIR model explorer</h3>
+                <p>Interactive visualization of how transmission, incubation, and recovery rates change a simulated outbreak.</p>
               </div>
               <SEIRChart />
             </div>
@@ -64,7 +48,7 @@ export default function App() {
 
         <section id="education" className="page-section" aria-labelledby="education-heading">
           <div className="container">
-            <SectionHeading id="education-heading" eyebrow="Education & credentials" title="A foundation in computer science and enterprise platforms." />
+            <SectionHeading id="education-heading" title="Education & certifications" />
             <div className="education-grid">
               {education.map((item) => (
                 <article className={`education-card${item.type === 'credential' ? ' credential-card' : ''}`} key={item.degree}>
@@ -80,7 +64,7 @@ export default function App() {
 
         <section id="skills" className="page-section section-bordered" aria-labelledby="skills-heading">
           <div className="container">
-            <SectionHeading id="skills-heading" eyebrow="Capabilities" title="Tools selected for the problem." description="A practical toolkit spanning software, data, cloud, visualization, and immersive systems." />
+            <SectionHeading id="skills-heading" title="Skills" />
             <div className="skills-grid">
               {skillGroups.map((group) => (
                 <article className="skill-group" key={group.title}>
@@ -92,15 +76,6 @@ export default function App() {
           </div>
         </section>
 
-        <section className="cta-band" aria-labelledby="contact-heading">
-          <div className="container cta-inner">
-            <div>
-              <p className="eyebrow">Start a conversation</p>
-              <h2 id="contact-heading">Have an interesting problem to solve?</h2>
-            </div>
-            <a className="button button-primary" href="mailto:Lizarraga.cristobal689@gmail.com">Contact me</a>
-          </div>
-        </section>
       </main>
 
       <Footer />
