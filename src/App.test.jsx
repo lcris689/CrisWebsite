@@ -21,9 +21,9 @@ describe('portfolio application', () => {
       expect(document.getElementById(label.toLowerCase())).toBeInTheDocument()
     }
 
-    expect(screen.getAllByRole('link', { name: /email|contact/i })[0]).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'lizarraga.cristobal689@gmail.com' })).toHaveAttribute(
       'href',
-      'mailto:Lizarraga.cristobal689@gmail.com'
+      'mailto:lizarraga.cristobal689@gmail.com'
     )
     expect(screen.getAllByRole('link', { name: /resume/i })[0]).toHaveAttribute('href', '/Resume.pdf')
     expect(screen.getByRole('main')).toBeInTheDocument()
