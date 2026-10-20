@@ -10,6 +10,15 @@ export const projects = [
     imageAlt: 'CMDB Identity Guard offline demo overview with identity-health metrics and duplicate review queue'
   },
   {
+    slug: 'gemma-4-developer-agent',
+    eyebrow: 'AI coding agent · Kaggle competition',
+    title: 'Gemma 4 Developer Agent',
+    status: 'In progress',
+    description: 'Building a constrained coding-agent submission with deterministic validation and packaging, tested tool policies, and reproducible experiments for retrieval, verification, and budget decisions.',
+    technologies: ['Python', 'Gemma 4', 'pytest', 'YAML'],
+    links: []
+  },
+  {
     slug: 'ant-foraging-lab',
     eyebrow: 'Agent-based simulation',
     title: 'Ant Foraging Lab',
@@ -87,8 +96,8 @@ export const education = [
 ]
 
 export const skillGroups = [
-  { title: 'Programming', skills: ['JavaScript', 'Python', 'Java', 'C / C++', 'SQL', 'Bash', 'PowerShell', 'C#', 'HTML / CSS'] },
-  { title: 'Data & AI', skills: ['TensorFlow', 'D3.js', 'Pandas', 'NumPy', 'Matplotlib', 'Spark', 'Hadoop', 'Tableau'] },
+  { title: 'Programming', skills: ['Python', 'JavaScript', 'Java', 'C / C++', 'SQL', 'Bash', 'PowerShell', 'C#', 'HTML / CSS'] },
+  { title: 'Data & AI', skills: ['LLM agent evaluation', 'TensorFlow', 'D3.js', 'Pandas', 'NumPy', 'Matplotlib', 'Spark', 'Hadoop', 'Tableau'] },
   { title: 'Web & Immersive', skills: ['React', 'Node.js', 'Three.js', 'AR.js', 'Unity', 'Blender', 'Google ARCore'] },
   { title: 'Cloud & Tools', skills: ['ServiceNow', 'AWS', 'Git / GitHub', 'PostgreSQL', 'MySQL', 'AutoCAD', 'Linux', 'Salesforce'] }
 ]

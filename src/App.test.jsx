@@ -81,6 +81,31 @@ describe('portfolio application', () => {
     expect(screen.queryByRole('link', { name: /view notebook/i })).not.toBeInTheDocument()
   })
 
+  it('features verified in-progress work on a constrained Gemma coding-agent harness', () => {
+    render(<App />)
+
+    const heading = screen.getByRole('heading', { level: 3, name: 'Gemma 4 Developer Agent' })
+    const project = heading.closest('article')
+
+    expect(within(project).getByText('In progress')).toBeInTheDocument()
+    expect(within(project).getByText(/constrained coding-agent submission/i)).toBeInTheDocument()
+    expect(within(project).getByText(/deterministic validation/i)).toBeInTheDocument()
+    for (const technology of ['Python', 'Gemma 4', 'pytest', 'YAML']) {
+      expect(within(project).getByText(technology)).toBeInTheDocument()
+    }
+    expect(within(project).queryByRole('link')).not.toBeInTheDocument()
+  })
+
+  it('prioritizes verified Python and AI-agent skills', () => {
+    render(<App />)
+
+    const programming = screen.getByRole('heading', { level: 3, name: 'Programming' }).closest('article')
+    const dataAi = screen.getByRole('heading', { level: 3, name: 'Data & AI' }).closest('article')
+
+    expect(within(programming).getAllByRole('listitem')[0]).toHaveTextContent('Python')
+    expect(within(dataAi).getByText('LLM agent evaluation')).toBeInTheDocument()
+  })
+
   it('presents a restrained project list without sales or personality copy', () => {
     render(<App />)
 
@@ -88,7 +113,7 @@ describe('portfolio application', () => {
       expect(screen.getByRole('heading', { level: 2, name: heading })).toBeInTheDocument()
     }
     expect(screen.getByRole('heading', { level: 3, name: 'Homelab Learning Lab' })).toBeInTheDocument()
-    expect(screen.getAllByText('In progress')).toHaveLength(2)
+    expect(screen.getAllByText('In progress')).toHaveLength(3)
     expect(screen.getAllByRole('link', { name: /resume/i })).toHaveLength(1)
     expect(screen.queryByText(/clear outcomes|problem to solve|corner of the internet|learning by making|thanks for stopping by|on the workbench/i)).not.toBeInTheDocument()
   })

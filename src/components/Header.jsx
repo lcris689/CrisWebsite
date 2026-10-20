@@ -61,6 +61,7 @@ export default function Header() {
         <MathBackdrop />
         <div className="container hero-content">
           <h1 id="hero-title">Cristobal Lizarraga</h1>
+          <p className="hero-summary">Software engineer building Python, data, AI, and web systems.</p>
         </div>
       </section>
     </header>

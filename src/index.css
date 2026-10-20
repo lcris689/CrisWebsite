@@ -104,6 +104,7 @@ p { color: var(--color-body); line-height: 1.65; }
 .hero { position: relative; min-height: clamp(420px, 58vh, 620px); display: grid; align-items: center; overflow: hidden; }
 .hero-content { position: relative; z-index: 1; padding-block: 8rem 5rem; }
 .hero h1 { max-width: 980px; margin: 0; font-size: clamp(4rem, 10vw, 8rem); font-weight: 600; line-height: 0.9; letter-spacing: -0.075em; text-shadow: 0 2px 22px rgb(9 9 11 / 85%); }
+.hero-summary { max-width: 620px; margin: 30px 0 0; color: var(--color-body); font-size: clamp(1rem, 2vw, 1.2rem); text-shadow: 0 2px 16px rgb(9 9 11 / 95%); }
 
 .math-backdrop { position: absolute; inset: 0; opacity: 0.8; pointer-events: none; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .math-backdrop svg { width: 100%; height: 100%; overflow: visible; }

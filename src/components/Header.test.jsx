@@ -31,6 +31,7 @@ describe('Header', () => {
     render(<Header />)
     expect(screen.getByRole('navigation', { name: /primary/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/^cristobal lizarraga$/i)
+    expect(screen.getByText('Software engineer building Python, data, AI, and web systems.')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '#projects')
     expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '#experience')
     expect(screen.getAllByRole('link', { name: 'Resume' })).toHaveLength(1)
