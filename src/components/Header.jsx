@@ -53,7 +53,7 @@ export default function Header() {
               {item[0].toUpperCase() + item.slice(1)}
             </a>
           ))}
-          <a className="nav-resume" href="/Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a className="nav-resume" href={`${import.meta.env.BASE_URL}Resume.pdf`} target="_blank" rel="noreferrer">Resume</a>
         </div>
       </nav>
 
