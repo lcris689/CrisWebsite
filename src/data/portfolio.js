@@ -10,6 +10,15 @@ export const projects = [
     imageAlt: 'CMDB Identity Guard offline demo overview with identity-health metrics and duplicate review queue'
   },
   {
+    slug: 'ant-foraging-lab',
+    eyebrow: 'Agent-based simulation',
+    title: 'Ant Foraging Lab',
+    status: 'In progress',
+    description: 'Rebuilding a collective-foraging model as a reproducible stochastic spatial agent-based simulation with seeded runs and tested behavioral invariants.',
+    technologies: ['Python', 'pytest', 'uv', 'Matplotlib'],
+    links: [{ label: 'View source', href: 'https://github.com/lcris689/ant-foraging-lab' }]
+  },
+  {
     slug: 'homelab-learning-lab',
     eyebrow: 'Infrastructure',
     title: 'Homelab Learning Lab',
@@ -35,15 +44,6 @@ export const projects = [
     technologies: ['Three.js', 'AR.js', 'Blender', 'ARCore'],
     links: [],
     visual: 'orbit'
-  },
-  {
-    slug: 'sleep-states',
-    eyebrow: 'Machine learning',
-    title: 'Detecting Pediatric Sleep States',
-    description: 'Analyzed pediatric sleep data using models from logistic regression to LSTM networks to identify behavioral patterns.',
-    technologies: ['Python', 'Pandas', 'NumPy', 'LSTM'],
-    links: [{ label: 'View notebook', href: 'https://www.kaggle.com/code/cristoballizarraga/detect-sleep-states-baseline-solution/edit' }],
-    visual: 'sleep-wave'
   }
 ]
 

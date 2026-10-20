@@ -51,9 +51,10 @@ describe('portfolio application', () => {
 
     const cmdbProject = screen.getByRole('heading', { level: 3, name: 'CMDB Identity Guard Offline Demo' })
     const vastProject = screen.getByRole('heading', { level: 3, name: 'VAST MC Challenge 2022' })
+    const cmdbProjectCard = cmdbProject.closest('article')
 
     expect(cmdbProject.compareDocumentPosition(vastProject) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
-    expect(screen.getByRole('link', { name: /view source/i })).toHaveAttribute(
+    expect(within(cmdbProjectCard).getByRole('link', { name: /view source/i })).toHaveAttribute(
       'href',
       'https://github.com/lcris689/cmdb-identity-guard-demo'
     )
@@ -64,6 +65,22 @@ describe('portfolio application', () => {
     expect(screen.queryByText(/pursuing the ServiceNow Certified System Administrator/i)).not.toBeInTheDocument()
   })
 
+  it('features the in-progress Ant Foraging Lab and hides the unavailable sleep notebook', () => {
+    render(<App />)
+
+    const antForagingHeading = screen.getByRole('heading', { level: 3, name: 'Ant Foraging Lab' })
+    const antForagingProject = antForagingHeading.closest('article')
+
+    expect(within(antForagingProject).getByText('In progress')).toBeInTheDocument()
+    expect(within(antForagingProject).getByText(/stochastic spatial agent-based simulation/i)).toBeInTheDocument()
+    expect(within(antForagingProject).getByRole('link', { name: /view source/i })).toHaveAttribute(
+      'href',
+      'https://github.com/lcris689/ant-foraging-lab'
+    )
+    expect(screen.queryByRole('heading', { level: 3, name: 'Detecting Pediatric Sleep States' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /view notebook/i })).not.toBeInTheDocument()
+  })
+
   it('presents a restrained project list without sales or personality copy', () => {
     render(<App />)
 
@@ -71,7 +88,7 @@ describe('portfolio application', () => {
       expect(screen.getByRole('heading', { level: 2, name: heading })).toBeInTheDocument()
     }
     expect(screen.getByRole('heading', { level: 3, name: 'Homelab Learning Lab' })).toBeInTheDocument()
-    expect(screen.getByText('In progress')).toBeInTheDocument()
+    expect(screen.getAllByText('In progress')).toHaveLength(2)
     expect(screen.getAllByRole('link', { name: /resume/i })).toHaveLength(1)
     expect(screen.queryByText(/clear outcomes|problem to solve|corner of the internet|learning by making|thanks for stopping by|on the workbench/i)).not.toBeInTheDocument()
   })
