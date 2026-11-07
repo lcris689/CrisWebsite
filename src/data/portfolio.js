@@ -32,8 +32,8 @@ export const projects = [
     eyebrow: 'Infrastructure',
     title: 'Homelab Learning Lab',
     status: 'In progress',
-    description: 'Documenting a Proxmox and Docker homelab through verified checkpoints, diagrams, and security notes.',
-    technologies: ['Proxmox', 'Debian', 'Docker', 'Nginx'],
+    description: 'Building a Proxmox and Docker homelab through verified checkpoints: a healthy LAN-only Jellyfin service with read-only shared media, tested playback, subtitles, and artwork, plus a Gluetun WireGuard gateway with provider-side forwarding.',
+    technologies: ['Proxmox', 'Debian', 'Docker', 'Jellyfin', 'Gluetun', 'WireGuard', 'Nginx'],
     links: []
   },
   {

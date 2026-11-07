@@ -96,6 +96,21 @@ describe('portfolio application', () => {
     expect(within(project).queryByRole('link')).not.toBeInTheDocument()
   })
 
+  it('describes verified Jellyfin and VPN gateway milestones without exposing the private homelab repository', () => {
+    render(<App />)
+
+    const heading = screen.getByRole('heading', { level: 3, name: 'Homelab Learning Lab' })
+    const project = heading.closest('article')
+
+    expect(within(project).getByText(/healthy LAN-only Jellyfin service/i)).toBeInTheDocument()
+    expect(within(project).getByText(/read-only shared media/i)).toBeInTheDocument()
+    expect(within(project).getByText(/Gluetun WireGuard gateway/i)).toBeInTheDocument()
+    for (const technology of ['Jellyfin', 'Gluetun', 'WireGuard']) {
+      expect(within(project).getByText(technology)).toBeInTheDocument()
+    }
+    expect(within(project).queryByRole('link')).not.toBeInTheDocument()
+  })
+
   it('prioritizes verified Python and AI-agent skills', () => {
     render(<App />)
 
