@@ -3,9 +3,12 @@ export const projects = [
     slug: 'cmdb-identity-guard-offline',
     eyebrow: 'ServiceNow · Competition project',
     title: 'CMDB Identity Guard Offline Demo',
-    description: 'Offline CMDB duplicate-analysis demo using synthetic records, explainable evidence, and human-reviewed decisions.',
-    technologies: ['ServiceNow', 'Next.js', 'React', 'TypeScript', 'Vinext'],
-    links: [{ label: 'View source', href: 'https://github.com/lcris689/cmdb-identity-guard-demo' }],
+    description: 'Public offline CMDB duplicate-analysis demo using synthetic records, explainable evidence, and simulated human-reviewed decisions. Deployed to Cloudflare Workers with direct ServiceNow proxy access disabled.',
+    technologies: ['ServiceNow', 'React', 'TypeScript', 'Vinext', 'Cloudflare Workers'],
+    links: [
+      { label: 'Try demo', href: 'https://cmdb-identity-guard-demo.lizarraga-cristobal689.workers.dev' },
+      { label: 'View source', href: 'https://github.com/lcris689/cmdb-identity-guard-demo' }
+    ],
     image: '/projects/cmdb-identity-guard-offline.webp',
     imageAlt: 'CMDB Identity Guard offline demo overview with identity-health metrics and duplicate review queue'
   },

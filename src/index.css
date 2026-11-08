@@ -143,7 +143,7 @@ p { color: var(--color-body); line-height: 1.65; }
 .technology-list { grid-column: 2; display: flex; flex-wrap: wrap; gap: 0; margin: 0; padding: 0; list-style: none; }
 .technology-list li { color: var(--color-muted); font-size: 0.78rem; }
 .technology-list li:not(:last-child)::after { content: ' · '; margin-inline: 5px; color: var(--color-faint); }
-.project-actions { grid-column: 3; grid-row: 1 / span 3; }
+.project-actions { grid-column: 3; grid-row: 1 / span 3; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .project-actions a { color: var(--color-ink); font-size: 0.85rem; text-underline-offset: 4px; white-space: nowrap; }
 
 .timeline { display: grid; gap: 12px; }

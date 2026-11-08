@@ -54,10 +54,15 @@ describe('portfolio application', () => {
     const cmdbProjectCard = cmdbProject.closest('article')
 
     expect(cmdbProject.compareDocumentPosition(vastProject) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(within(cmdbProjectCard).getByRole('link', { name: /try demo/i })).toHaveAttribute(
+      'href',
+      'https://cmdb-identity-guard-demo.lizarraga-cristobal689.workers.dev'
+    )
     expect(within(cmdbProjectCard).getByRole('link', { name: /view source/i })).toHaveAttribute(
       'href',
       'https://github.com/lcris689/cmdb-identity-guard-demo'
     )
+    expect(within(cmdbProjectCard).getByText('Cloudflare Workers')).toBeInTheDocument()
     expect(screen.queryByRole('img', { name: /cmdb identity guard offline demo overview/i })).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 3, name: 'CMDB Duplicate Analysis Workbench' })).not.toBeInTheDocument()
     const credential = screen.getByRole('heading', { level: 3, name: 'ServiceNow Certified System Administrator (CSA)' })
