@@ -21,6 +21,8 @@ describe('portfolio theme', () => {
 
   it('keeps the project list single-column and text-first', () => {
     expect(stylesheet).toContain('.project-grid { display: grid; grid-template-columns: 1fr;')
+    expect(stylesheet).toContain('.project-item { color: var(--color-ink); background: var(--color-paper);')
+    expect(stylesheet).not.toContain('.project-item:first-child')
     expect(stylesheet).not.toContain('.project-screenshot')
   })
 
