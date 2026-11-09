@@ -58,10 +58,15 @@ export default function Header() {
       </nav>
 
       <section id="top" className="hero" aria-labelledby="hero-title">
-        <MathBackdrop />
-        <div className="container hero-content">
-          <h1 id="hero-title">Cristobal Lizarraga</h1>
-          <p className="hero-summary">Software engineer building Python, data, AI, and web systems.</p>
+        <div className="container hero-layout">
+          <div className="hero-art" aria-hidden="true">
+            <MathBackdrop />
+          </div>
+          <div className="hero-content">
+            <p className="hero-kicker">Software engineer</p>
+            <h1 id="hero-title">Cristobal Lizarraga</h1>
+            <p className="hero-summary">Building practical systems across Python, data, AI, and the web.</p>
+          </div>
         </div>
       </section>
     </header>

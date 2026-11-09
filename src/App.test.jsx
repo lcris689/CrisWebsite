@@ -137,4 +137,14 @@ describe('portfolio application', () => {
     expect(screen.getAllByRole('link', { name: /resume/i })).toHaveLength(1)
     expect(screen.queryByText(/clear outcomes|problem to solve|corner of the internet|learning by making|thanks for stopping by|on the workbench/i)).not.toBeInTheDocument()
   })
+
+  it('uses an editorial layout with distinct section surfaces', () => {
+    const { container } = render(<App />)
+
+    expect(container.querySelector('.hero-layout')).toBeInTheDocument()
+    expect(document.getElementById('projects')).toHaveClass('section-projects')
+    expect(document.getElementById('experience')).toHaveClass('section-experience')
+    expect(document.getElementById('education')).toHaveClass('section-education')
+    expect(document.getElementById('skills')).toHaveClass('section-skills')
+  })
 })

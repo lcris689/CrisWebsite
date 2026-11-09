@@ -12,7 +12,7 @@ export default function App() {
       <Header />
 
       <main>
-        <section id="projects" className="page-section" aria-labelledby="projects-heading">
+        <section id="projects" className="page-section section-projects" aria-labelledby="projects-heading">
           <div className="container">
             <SectionHeading id="projects-heading" title="Projects" description="Selected projects and ongoing work." />
             <div className="project-grid">
@@ -21,7 +21,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="experience" className="page-section section-soft" aria-labelledby="experience-heading">
+        <section id="experience" className="page-section section-experience" aria-labelledby="experience-heading">
           <div className="container">
             <SectionHeading id="experience-heading" title="Experience" />
             <div className="timeline">
@@ -46,7 +46,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="education" className="page-section" aria-labelledby="education-heading">
+        <section id="education" className="page-section section-education" aria-labelledby="education-heading">
           <div className="container">
             <SectionHeading id="education-heading" title="Education & certifications" />
             <div className="education-grid">
@@ -62,7 +62,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="skills" className="page-section section-bordered" aria-labelledby="skills-heading">
+        <section id="skills" className="page-section section-skills" aria-labelledby="skills-heading">
           <div className="container">
             <SectionHeading id="skills-heading" title="Skills" />
             <div className="skills-grid">
