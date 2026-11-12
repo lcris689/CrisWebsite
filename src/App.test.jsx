@@ -70,18 +70,21 @@ describe('portfolio application', () => {
     expect(screen.queryByText(/pursuing the ServiceNow Certified System Administrator/i)).not.toBeInTheDocument()
   })
 
-  it('features the in-progress Ant Foraging Lab and hides the unavailable sleep notebook', () => {
+  it('features the release-ready Ant Foraging Lab without exposing its private repository', () => {
     render(<App />)
 
     const antForagingHeading = screen.getByRole('heading', { level: 3, name: 'Ant Foraging Lab' })
     const antForagingProject = antForagingHeading.closest('article')
 
-    expect(within(antForagingProject).getByText('In progress')).toBeInTheDocument()
+    expect(within(antForagingProject).queryByText('In progress')).not.toBeInTheDocument()
     expect(within(antForagingProject).getByText(/stochastic spatial agent-based simulation/i)).toBeInTheDocument()
-    expect(within(antForagingProject).getByRole('link', { name: /view source/i })).toHaveAttribute(
-      'href',
-      'https://github.com/lcris689/ant-foraging-lab'
-    )
+    expect(within(antForagingProject).getByText(/nest-based recruitment/i)).toBeInTheDocument()
+    expect(within(antForagingProject).getByText(/interactive local browser lab/i)).toBeInTheDocument()
+    expect(within(antForagingProject).getByText(/30-seed paired comparison/i)).toBeInTheDocument()
+    for (const technology of ['Python', 'FastAPI', 'Canvas API', 'pytest']) {
+      expect(within(antForagingProject).getByText(technology)).toBeInTheDocument()
+    }
+    expect(within(antForagingProject).queryByRole('link')).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 3, name: 'Detecting Pediatric Sleep States' })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /view notebook/i })).not.toBeInTheDocument()
   })
@@ -135,7 +138,7 @@ describe('portfolio application', () => {
       expect(screen.getByRole('heading', { level: 2, name: heading })).toBeInTheDocument()
     }
     expect(screen.getByRole('heading', { level: 3, name: 'Home Lab' })).toBeInTheDocument()
-    expect(screen.getAllByText('In progress')).toHaveLength(2)
+    expect(screen.getAllByText('In progress')).toHaveLength(1)
     expect(screen.getAllByRole('link', { name: /resume/i })).toHaveLength(1)
     expect(screen.queryByText(/clear outcomes|problem to solve|corner of the internet|learning by making|thanks for stopping by|on the workbench/i)).not.toBeInTheDocument()
   })

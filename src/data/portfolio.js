@@ -25,10 +25,9 @@ export const projects = [
     slug: 'ant-foraging-lab',
     eyebrow: 'Agent-based simulation',
     title: 'Ant Foraging Lab',
-    status: 'In progress',
-    description: 'Rebuilding a collective-foraging model as a reproducible stochastic spatial agent-based simulation with seeded runs and tested behavioral invariants.',
-    technologies: ['Python', 'pytest', 'uv', 'Matplotlib'],
-    links: [{ label: 'View source', href: 'https://github.com/lcris689/ant-foraging-lab' }]
+    description: 'Developed a reproducible stochastic spatial agent-based simulation of collective foraging with explicit nest-based recruitment, seeded and bounded experiments, an interactive local browser lab, and a documented 30-seed paired comparison.',
+    technologies: ['Python', 'FastAPI', 'Canvas API', 'pytest', 'uv'],
+    links: []
   },
   {
     slug: 'homelab-learning-lab',
