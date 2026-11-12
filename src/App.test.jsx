@@ -104,9 +104,11 @@ describe('portfolio application', () => {
   it('describes verified Jellyfin and VPN gateway milestones without exposing the private homelab repository', () => {
     render(<App />)
 
-    const heading = screen.getByRole('heading', { level: 3, name: 'Homelab Learning Lab' })
+    const heading = screen.getByRole('heading', { level: 3, name: 'Home Lab' })
     const project = heading.closest('article')
 
+    expect(within(project).getByText('Personal project')).toBeInTheDocument()
+    expect(within(project).queryByText('In progress')).not.toBeInTheDocument()
     expect(within(project).getByText(/healthy LAN-only Jellyfin service/i)).toBeInTheDocument()
     expect(within(project).getByText(/read-only shared media/i)).toBeInTheDocument()
     expect(within(project).getByText(/Gluetun WireGuard gateway/i)).toBeInTheDocument()
@@ -132,8 +134,8 @@ describe('portfolio application', () => {
     for (const heading of ['Projects', 'Experience', 'Education & certifications', 'Skills']) {
       expect(screen.getByRole('heading', { level: 2, name: heading })).toBeInTheDocument()
     }
-    expect(screen.getByRole('heading', { level: 3, name: 'Homelab Learning Lab' })).toBeInTheDocument()
-    expect(screen.getAllByText('In progress')).toHaveLength(3)
+    expect(screen.getByRole('heading', { level: 3, name: 'Home Lab' })).toBeInTheDocument()
+    expect(screen.getAllByText('In progress')).toHaveLength(2)
     expect(screen.getAllByRole('link', { name: /resume/i })).toHaveLength(1)
     expect(screen.queryByText(/clear outcomes|problem to solve|corner of the internet|learning by making|thanks for stopping by|on the workbench/i)).not.toBeInTheDocument()
   })
