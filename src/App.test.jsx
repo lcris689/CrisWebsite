@@ -70,7 +70,7 @@ describe('portfolio application', () => {
     expect(screen.queryByText(/pursuing the ServiceNow Certified System Administrator/i)).not.toBeInTheDocument()
   })
 
-  it('features the release-ready Ant Foraging Lab and links to its public repository', () => {
+  it('features the release-ready Ant Foraging Lab with public demo and source links', () => {
     render(<App />)
 
     const antForagingHeading = screen.getByRole('heading', { level: 3, name: 'Ant Foraging Lab' })
@@ -79,11 +79,15 @@ describe('portfolio application', () => {
     expect(within(antForagingProject).queryByText('In progress')).not.toBeInTheDocument()
     expect(within(antForagingProject).getByText(/stochastic spatial agent-based simulation/i)).toBeInTheDocument()
     expect(within(antForagingProject).getByText(/nest-based recruitment/i)).toBeInTheDocument()
-    expect(within(antForagingProject).getByText(/interactive local browser lab/i)).toBeInTheDocument()
+    expect(within(antForagingProject).getByText(/interactive browser lab/i)).toBeInTheDocument()
     expect(within(antForagingProject).getByText(/30-seed paired comparison/i)).toBeInTheDocument()
     for (const technology of ['Python', 'FastAPI', 'Canvas API', 'pytest']) {
       expect(within(antForagingProject).getByText(technology)).toBeInTheDocument()
     }
+    expect(within(antForagingProject).getByRole('link', { name: /try demo/i })).toHaveAttribute(
+      'href',
+      'https://ant-foraging-lab.onrender.com/'
+    )
     expect(within(antForagingProject).getByRole('link', { name: /view source/i })).toHaveAttribute(
       'href',
       'https://github.com/lcris689/ant-foraging-lab'

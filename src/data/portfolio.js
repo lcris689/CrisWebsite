@@ -25,9 +25,12 @@ export const projects = [
     slug: 'ant-foraging-lab',
     eyebrow: 'Agent-based simulation',
     title: 'Ant Foraging Lab',
-    description: 'Developed a reproducible stochastic spatial agent-based simulation of collective foraging with explicit nest-based recruitment, seeded and bounded experiments, an interactive local browser lab, and a documented 30-seed paired comparison.',
+    description: 'Developed a reproducible stochastic spatial agent-based simulation of collective foraging with explicit nest-based recruitment, seeded and bounded experiments, an interactive browser lab, and a documented 30-seed paired comparison.',
     technologies: ['Python', 'FastAPI', 'Canvas API', 'pytest', 'uv'],
-    links: [{ label: 'View source', href: 'https://github.com/lcris689/ant-foraging-lab' }]
+    links: [
+      { label: 'Try demo', href: 'https://ant-foraging-lab.onrender.com/' },
+      { label: 'View source', href: 'https://github.com/lcris689/ant-foraging-lab' }
+    ]
   },
   {
     slug: 'homelab-learning-lab',
