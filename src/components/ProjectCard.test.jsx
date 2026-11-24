@@ -34,17 +34,21 @@ describe('ProjectCard', () => {
     expect(container.querySelector('.project-actions')).not.toBeInTheDocument()
   })
 
-  it('keeps the project list text-first when image metadata is provided', () => {
+  it('renders an optional project image with descriptive alternative text', () => {
     render(
       <ProjectCard
         project={{
           ...project,
-          image: '/projects/cmdb-identity-guard-offline.webp',
-          imageAlt: 'CMDB Identity Guard offline demo overview',
+          image: '/projects/psyche-vr.png',
+          imageAlt: 'Psyche spacecraft model above a tennis court for scale',
+          showImage: true,
         }}
       />,
     )
 
-    expect(screen.queryByRole('img')).not.toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /psyche spacecraft model above a tennis court/i })).toHaveAttribute(
+      'src',
+      '/projects/psyche-vr.png',
+    )
   })
 })

@@ -51,12 +51,14 @@ export const projects = [
   },
   {
     slug: 'psyche-ar',
-    eyebrow: 'Immersive web',
+    eyebrow: 'ASU capstone · Team project',
     title: 'AR NASA Spacecraft Museum Model',
-    description: "Developed an interactive AR model of NASA's Psyche spacecraft for educational use in museum web applications.",
-    technologies: ['Three.js', 'AR.js', 'Blender', 'ARCore'],
+    description: "Contributed keyboard camera navigation to a team-built browser AR/VR museum experience for exploring NASA's Psyche spacecraft and learning about its major components.",
+    technologies: ['JavaScript', 'Three.js', 'AR.js', 'glTF'],
     links: [],
-    visual: 'orbit'
+    image: '/projects/psyche-vr.png',
+    imageAlt: 'Psyche spacecraft model above a tennis court for scale in the team capstone web experience',
+    showImage: true
   }
 ]
 

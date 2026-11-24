@@ -19,9 +19,10 @@ describe('portfolio theme', () => {
     expect(stylesheet).not.toContain('.project-card:hover')
   })
 
-  it('keeps the project list single-column and text-first', () => {
+  it('keeps the project list single-column with a shared optional-image treatment', () => {
     expect(stylesheet).toContain('.project-grid { display: grid; grid-template-columns: 1fr;')
-    expect(stylesheet).toContain('.project-item { color: var(--color-ink); background: var(--color-paper);')
+    expect(stylesheet).toContain('.project-item { overflow: hidden; color: var(--color-ink); background: var(--color-paper);')
+    expect(stylesheet).toContain('.project-media img { display: block; width: 100%; height: auto;')
     expect(stylesheet).not.toContain('.project-item:first-child')
     expect(stylesheet).not.toContain('.project-screenshot')
   })

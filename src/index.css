@@ -168,7 +168,9 @@ p { color: var(--color-body); line-height: 1.65; }
 .section-projects .section-heading h2 { color: #fffaf3; }
 .section-projects .section-description { color: var(--color-night-body); }
 .project-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
-.project-item { color: var(--color-ink); background: var(--color-paper); border-radius: var(--radius-md); }
+.project-item { overflow: hidden; color: var(--color-ink); background: var(--color-paper); border-radius: var(--radius-md); }
+.project-media { margin: 0; background: #00344c; border-bottom: 1px solid var(--color-hairline); }
+.project-media img { display: block; width: 100%; height: auto; aspect-ratio: 1895 / 903; object-fit: cover; }
 .project-body { display: grid; grid-template-columns: minmax(220px, 0.7fr) minmax(300px, 1.3fr) auto; gap: 18px 36px; align-items: start; padding: clamp(26px, 4vw, 42px); }
 .project-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .project-status { color: var(--color-body); font: 500 0.7rem/1 'IBM Plex Mono', monospace; text-transform: uppercase; }

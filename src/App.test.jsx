@@ -111,6 +111,20 @@ describe('portfolio application', () => {
     expect(within(project).queryByRole('link')).not.toBeInTheDocument()
   })
 
+  it('presents Psyche AR as attributed team work with the original project image', () => {
+    render(<App />)
+
+    const heading = screen.getByRole('heading', { level: 3, name: 'AR NASA Spacecraft Museum Model' })
+    const project = heading.closest('article')
+
+    expect(within(project).getByText('ASU capstone · Team project')).toBeInTheDocument()
+    expect(within(project).getByText(/contributed keyboard camera navigation/i)).toBeInTheDocument()
+    expect(within(project).getByRole('img', { name: /psyche spacecraft model above a tennis court/i })).toHaveAttribute(
+      'src',
+      '/projects/psyche-vr.png',
+    )
+  })
+
   it('describes verified Jellyfin and VPN gateway milestones without exposing the private homelab repository', () => {
     render(<App />)
 
