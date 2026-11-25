@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import ProjectCard from './ProjectCard'
 
@@ -34,7 +35,8 @@ describe('ProjectCard', () => {
     expect(container.querySelector('.project-actions')).not.toBeInTheDocument()
   })
 
-  it('renders an optional project image with descriptive alternative text', () => {
+  it('opens an optional project image in an accessible dialog', async () => {
+    const user = userEvent.setup()
     render(
       <ProjectCard
         project={{
@@ -46,9 +48,18 @@ describe('ProjectCard', () => {
       />,
     )
 
+    expect(screen.queryByRole('img')).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: /view project image/i }))
+
+    expect(screen.getByRole('dialog', { name: /sample project image/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /psyche spacecraft model above a tennis court/i })).toHaveAttribute(
       'src',
       '/projects/psyche-vr.png',
     )
+
+    await user.keyboard('{Escape}')
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /view project image/i })).toHaveFocus()
   })
 })

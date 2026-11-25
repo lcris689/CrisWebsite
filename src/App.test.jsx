@@ -119,10 +119,8 @@ describe('portfolio application', () => {
 
     expect(within(project).getByText('ASU capstone · Team project')).toBeInTheDocument()
     expect(within(project).getByText(/contributed keyboard camera navigation/i)).toBeInTheDocument()
-    expect(within(project).getByRole('img', { name: /psyche spacecraft model above a tennis court/i })).toHaveAttribute(
-      'src',
-      '/projects/psyche-vr.png',
-    )
+    expect(within(project).getByRole('button', { name: /view project image/i })).toBeInTheDocument()
+    expect(within(project).queryByRole('img')).not.toBeInTheDocument()
   })
 
   it('describes verified Jellyfin and VPN gateway milestones without exposing the private homelab repository', () => {
